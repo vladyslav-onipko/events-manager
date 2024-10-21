@@ -1,13 +1,109 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-size: 1.8rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img {
+  font-family: 'object-fit: cover; object-position: center;';
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open {
+  transform: translateY(0);
+}
+
+.ReactModal__Content--before-close {
+  transform: translateY(50px);
+}
+
+@layer components {
+  .modal-overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 40px 10px 40px 10px;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .modal-content {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    padding: 60px 20px 50px 20px;
+    position: relative;
+    transform: translateY(50px);
+    transition: transform 0.3s;
+    width: 100%;
+  }
+
+  .form-required-text {
+    @apply text-[1.2rem] ml-[5px] text-red-700 italic font-normal;
+  }
+
+  .form-error-text {
+    @apply absolute text-[1rem] text-red-700 left-0 bottom-[-15px];
+  }
+
+  .table-cell {
+    @apply truncate overflow-hidden whitespace-nowrap text-ellipsis max-w-xs;
+  }
+}
+
+@layer base {
+  label {
+    @apply flex items-center text-cyan-900 font-medium;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full;
+  }
+
+  input.has-error,
+  select.has-error,
+  textarea.has-error {
+    @apply border-red-700;
+  }
 }
