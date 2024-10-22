@@ -1,7 +1,7 @@
 const EventsTableAction = ({ icon, children, modifier, ...props }) => {
   const actionModifiers = {
     default: 'border-cyan-700 ',
-    'is-denger': 'bg-red-700 border-red-700 text-white hover:border-cyan-700',
+    'is-danger': 'bg-red-700 border-red-700 text-white hover:border-cyan-700',
   };
 
   return (

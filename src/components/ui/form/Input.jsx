@@ -9,7 +9,13 @@ const Input = ({ id, label, required, register, errors, ...props }) => {
         {label}
         {required && <span className="form-required-text">(required)</span>}
       </label>
-      <input className={`form-input ${errorClassName}`} {...register(id)} id={id} name={id} {...props} />
+      <input
+        className={`form-input border-cyan-700 text-cyan-900 placeholder:text-cyan-900 text-[1.2rem] ${errorClassName}`}
+        {...register(id)}
+        id={id}
+        name={id}
+        {...props}
+      />
       {errors && errors[id] && <span className="form-error-text">{errors[id].message}</span>}
     </FormControl>
   );

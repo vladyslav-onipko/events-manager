@@ -1,3 +1,5 @@
+import { Tooltip } from 'react-tooltip';
+
 import Header from './Header';
 import EventsTable from '../components/event/table/EventsTable';
 
@@ -11,6 +13,7 @@ const Root = () => {
       </div>
       <main className="w-full h-screen relative" role="main">
         <EventsTable />
+        <Tooltip id="event-tooltip" style={{ backgroundColor: '#134E4A', zIndex: 9999 }} />
       </main>
     </div>
   );

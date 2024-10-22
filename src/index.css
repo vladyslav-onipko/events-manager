@@ -85,8 +85,12 @@ img {
     @apply absolute text-[1rem] text-red-700 left-0 bottom-[-15px];
   }
 
-  .table-cell {
+  .truncate-text {
     @apply truncate overflow-hidden whitespace-nowrap text-ellipsis max-w-xs;
+  }
+
+  .placeholder-text {
+    @apply text-center font-medium text-[1.8rem] text-cyan-900;
   }
 }
 

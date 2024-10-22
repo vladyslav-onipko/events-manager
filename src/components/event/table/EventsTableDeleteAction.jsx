@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import EventsTableAction from './EventsTableAction';
-import EventDeleteModal from '../EventDeleteModal';
+import EventDeleteModal from '../modal/EventDeleteModal';
 
 import { ReactComponent as TrashIcon } from '../../../assets/icons/trash.svg';
 
@@ -12,7 +12,13 @@ const EventsTableDeleteAction = ({ eventId }) => {
 
   return (
     <>
-      <EventsTableAction modifier="is-denger" onClick={() => setIsOpenEventDeleteModal(true)} icon={<TrashIcon />}>
+      <EventsTableAction
+        data-tooltip-content="delete"
+        data-tooltip-id="event-tooltip"
+        modifier="is-danger"
+        onClick={() => setIsOpenEventDeleteModal(true)}
+        icon={<TrashIcon />}
+      >
         delete event
       </EventsTableAction>
       {isOpenEventDeleteModal && (

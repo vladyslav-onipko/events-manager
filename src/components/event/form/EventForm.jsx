@@ -1,18 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import Form from '../ui/form/Form';
-import Input from '../ui/form/Input';
-import TextArea from '../ui/form/Textarea';
-import Select from '../ui/form/Select';
-import Button from '../ui/base/Button';
-import ErrorBlock from '../ui/base/ErrorBlock';
+import Form from '../../ui/form/Form';
+import Input from '../../ui/form/Input';
+import TextArea from '../../ui/form/Textarea';
+import Select from '../../ui/form/Select';
+import Button from '../../ui/base/Button';
+import ErrorBlock from '../../ui/base/ErrorBlock';
 
-import { EVENT_CATEGORYES } from '../../utils/constants';
-import { EVENT_STATUSES } from '../../utils/constants';
-import { eventSchema } from '../../schemas/event';
-import { useCreateEvent } from '../../hooks/create-event';
-import { useEditEvent } from '../../hooks/edit-event';
+import { EVENT_CATEGORYES } from '../../../utils/constants';
+import { EVENT_STATUSES } from '../../../utils/constants';
+import { eventSchema } from '../../../schemas/event';
+import { useCreateEvent } from '../../../hooks/create-event';
+import { useEditEvent } from '../../../hooks/edit-event';
 
 const EventForm = ({ onCancel, event }) => {
   const {

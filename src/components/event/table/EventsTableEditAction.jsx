@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import EventsTableAction from './EventsTableAction';
-import EventEditModal from '../EventEditModal';
+import EventEditModal from '../modal/EventEditModal';
 
 import { ReactComponent as EditIcon } from '../../../assets/icons/edit.svg';
 
@@ -12,7 +12,12 @@ const EventsTableEditAction = ({ event }) => {
 
   return (
     <>
-      <EventsTableAction onClick={() => setIsOpenEventEditModal(true)} icon={<EditIcon />}>
+      <EventsTableAction
+        data-tooltip-content="edit"
+        data-tooltip-id="event-tooltip"
+        onClick={() => setIsOpenEventEditModal(true)}
+        icon={<EditIcon />}
+      >
         edit event
       </EventsTableAction>
       {isOpenEventEditModal && (

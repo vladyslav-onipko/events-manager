@@ -9,6 +9,8 @@ const ModalCloseButton = ({ onClose }) => {
     <button
       className="flex justify-center items-center absolute right-[20px] top-[20px] transition hover:text-red-700"
       onClick={onClose}
+      data-tooltip-content="close"
+      data-tooltip-id="event-tooltip"
     >
       <span className="inline-block size-10 pointer-events-none" aria-hidden="true">
         <CloseIcon />
@@ -34,7 +36,7 @@ const Modal = ({ isOpen, onClose, action, onAction, title, children }) => {
       </header>
       {children}
       {action && (
-        <div className="w-full mt-[50px] flex items-center justify-center">
+        <div className="w-full mt-[30px] flex items-center justify-center">
           <Button onClick={onAction}>{action}</Button>
         </div>
       )}

@@ -1,10 +1,10 @@
-import Modal from '../modal/Modal';
+import Modal from '../../modal/Modal';
 
-import { ReactComponent as DescriptopnIcon } from '../../assets/icons/details.svg';
-import { ReactComponent as NameIcon } from '../../assets/icons/star.svg';
-import { ReactComponent as CategoryIcon } from '../../assets/icons/tag.svg';
-import { ReactComponent as StatusIcon } from '../../assets/icons/status.svg';
-import { ReactComponent as DateIcon } from '../../assets/icons/calendar.svg';
+import { ReactComponent as DescriptopnIcon } from '../../../assets/icons/details.svg';
+import { ReactComponent as NameIcon } from '../../../assets/icons/star.svg';
+import { ReactComponent as CategoryIcon } from '../../../assets/icons/tag.svg';
+import { ReactComponent as StatusIcon } from '../../../assets/icons/status.svg';
+import { ReactComponent as DateIcon } from '../../../assets/icons/calendar.svg';
 
 const evenstIcons = {
   name: <NameIcon />,
@@ -17,8 +17,8 @@ const evenstIcons = {
 const EventDetailsItem = ({ title, text, icon }) => {
   return (
     <div className="mb-[15px]">
-      <p className="flex items-center text-cyan-900 font-bold">
-        <span className="inline-block size-8 mr-[5px] pointer-events-none" aria-hidden="true">
+      <p className="text-cyan-900 font-bold">
+        <span className="inline-block size-8 mr-[5px] -mb-[4px] pointer-events-none" aria-hidden="true">
           {icon}
         </span>
         <span className="mr-[5px] capitalize">{title}:</span>

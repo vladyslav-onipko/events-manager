@@ -1,8 +1,8 @@
-import Modal from '../modal/Modal';
-import Button from '../ui/base/Button';
-import ErrorBlock from '../ui/base/ErrorBlock';
+import Modal from '../../modal/Modal';
+import Button from '../../ui/base/Button';
+import ErrorBlock from '../../ui/base/ErrorBlock';
 
-import { useDeleteEvent } from '../../hooks/delete-event';
+import { useDeleteEvent } from '../../../hooks/delete-event';
 
 const EventDeleteModal = ({ isOpen, onClose, eventId }) => {
   const { mutate: deleteEvent, isPending, isError, error } = useDeleteEvent();
@@ -26,7 +26,7 @@ const EventDeleteModal = ({ isOpen, onClose, eventId }) => {
         <Button modifier="is-secondary" onClick={onClose}>
           Cancel
         </Button>
-        <Button modifier="is-denger" disabled={isPending} onClick={handleDeleteEvent}>
+        <Button modifier="is-danger" disabled={isPending} onClick={handleDeleteEvent}>
           {isPending ? 'Deleting...' : 'Delete'}
         </Button>
       </div>

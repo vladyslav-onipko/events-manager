@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import Button from '../components/ui/base/Button';
-import EventCreateModal from '../components/event/EventCreateModal';
+import EventCreateModal from '../components/event/modal/EventCreateModal';
 
 const Header = () => {
   const [isOpenEventCreateModal, setIsOpenEventCreateModal] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
       <Button modifier="is-secondary" onClick={() => setIsOpenEventCreateModal(true)}>
         Create your first event
       </Button>
-      <EventCreateModal isOpen={isOpenEventCreateModal} onClose={handleCloseModal} />
+      {isOpenEventCreateModal && <EventCreateModal isOpen={isOpenEventCreateModal} onClose={handleCloseModal} />}
     </header>
   );
 };

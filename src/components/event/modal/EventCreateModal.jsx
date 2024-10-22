@@ -1,5 +1,5 @@
-import Modal from '../modal/Modal';
-import EventForm from './EventForm';
+import Modal from '../../modal/Modal';
+import EventForm from '../form/EventForm';
 
 const EventCreateModal = ({ isOpen, onClose }) => {
   return (

@@ -2,7 +2,7 @@ const Button = ({ modifier, type, children, ...props }) => {
   const buttonModifiers = {
     default: 'bg-teal-700 border-teal-700',
     'is-secondary': 'bg-amber-700 border-amber-700',
-    'is-denger': 'bg-red-900 border-red-900',
+    'is-danger': 'bg-red-900 border-red-900',
   };
 
   return (

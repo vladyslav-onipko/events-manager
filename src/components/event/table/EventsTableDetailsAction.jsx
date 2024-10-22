@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import EventsTableAction from './EventsTableAction';
-import EventsDetailsModal from '../EventDetailsModal';
+import EventsDetailsModal from '../modal/EventDetailsModal';
 
 import { ReactComponent as DetailsIcon } from '../../../assets/icons/details.svg';
 
@@ -12,7 +12,12 @@ const EventsTableDetailsAction = ({ event }) => {
 
   return (
     <>
-      <EventsTableAction onClick={() => setIsOpenEventDetailsModal(true)} icon={<DetailsIcon />}>
+      <EventsTableAction
+        data-tooltip-content="details"
+        data-tooltip-id="event-tooltip"
+        onClick={() => setIsOpenEventDetailsModal(true)}
+        icon={<DetailsIcon />}
+      >
         event details
       </EventsTableAction>
       {isOpenEventDetailsModal && (
